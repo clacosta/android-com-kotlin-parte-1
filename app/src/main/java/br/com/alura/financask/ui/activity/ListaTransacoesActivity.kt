@@ -3,11 +3,11 @@ package br.com.alura.financask.ui.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import br.com.alura.financask.R
+import br.com.alura.financask.model.Tipo
 import br.com.alura.financask.model.Transacao
 import br.com.alura.financask.ui.adapter.ListaTrasacoesAdapter
 import kotlinx.android.synthetic.main.activity_lista_transacoes.*
 import java.math.BigDecimal
-import java.util.*
 
 class ListaTransacoesActivity : AppCompatActivity() {
 
@@ -17,13 +17,12 @@ class ListaTransacoesActivity : AppCompatActivity() {
         val transacoes = listOf(
             Transacao(
                 BigDecimal(20.5),
-                "Comida",
-                Calendar.getInstance()
+                Tipo.DESPESA
             ),
             Transacao(
                 BigDecimal(100.0),
                 "Economia",
-                Calendar.getInstance()
+                Tipo.RECEITA
             )
         )
         lista_transacoes_listview.adapter = ListaTrasacoesAdapter(this, transacoes)
