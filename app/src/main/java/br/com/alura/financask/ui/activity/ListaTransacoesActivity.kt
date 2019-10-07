@@ -25,6 +25,15 @@ class ListaTransacoesActivity : AppCompatActivity() {
                 valor = BigDecimal(100.0),
                 categoria = "Economia",
                 tipo = Tipo.RECEITA
+            ),
+            Transacao(
+                valor = BigDecimal(200.00),
+                tipo = Tipo.DESPESA
+            ),
+            Transacao(
+                valor = BigDecimal(500.0),
+                categoria = "Prêmio",
+                tipo = Tipo.RECEITA
             )
         )
         lista_transacoes_listview.adapter = ListaTrasacoesAdapter(this, transacoes)
