@@ -23,7 +23,7 @@ class ListaTrasacoesAdapter(
             false
         )
         val transacao = transacoes[position]
-        viewCriada.transacao_valor.setText(transacao.getValor().toString())
+        viewCriada.transacao_valor.setText(transacao.valor.toString())
         return viewCriada
     }
 
