@@ -1,25 +1,34 @@
 package br.com.alura.financask.ui.adapter
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import br.com.alura.financask.R
 
-class ListaTrasacoesAdapter : BaseAdapter(){
+class ListaTrasacoesAdapter(
+    private val context: Context,
+    private val transacoes: List<String>
+) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return LayoutInflater.from(context).inflate(
+            R.layout.transacao_item, parent,
+            false
+        )
     }
 
-    override fun getItem(position: Int): Any {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun getItem(position: Int): String {
+        return transacoes[position]
     }
 
     override fun getItemId(position: Int): Long {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return 0
     }
 
     override fun getCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return transacoes.size
     }
 
 }
